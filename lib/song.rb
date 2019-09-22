@@ -7,9 +7,15 @@ class Song
   end
 
   def self.create
-    song = Song.new
-    song.save
-    song
+    songs = Song.new
+    songs.save
+    songs
+  end
+  
+  def self.create_by_name(song_name)
+    songs = self.create
+    songs.name = song_name
+    songs
   end
   
   def self.all
@@ -19,14 +25,12 @@ class Song
   def self.new_by_name(song_name)
     songs = self.new 
     songs.name = song_name 
-    song
+    songs
    
   end
   
   def self.find_or_create_by_name(name)
-    @@all.find do |songs| 
-      if songs.name == name
-        name
+   songs.
       else 
         @@all << name
       end 
